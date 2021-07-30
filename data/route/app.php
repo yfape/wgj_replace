@@ -2,7 +2,7 @@
 /*
  * @Author: your name
  * @Date: 2021-07-30 09:25:33
- * @LastEditTime: 2021-07-30 11:19:27
+ * @LastEditTime: 2021-07-30 16:08:53
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \wgj_replace\data\route\app.php
@@ -21,8 +21,8 @@ use think\facade\Route;
 Route::get("/col/:site_id/:col_id", "Col/get")->pattern([
     "site_id" => "\d+",
     "col_id"   => "\d+"
-]);
+])->cache(100);
 Route::get("/articles/:col_id/:page", "Article/gets")->pattern([
     "col_id" => "\d+",
     "page"   => "\d+"
-]);
+])->cache(100);

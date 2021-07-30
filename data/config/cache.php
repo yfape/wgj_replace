@@ -1,4 +1,12 @@
 <?php
+/*
+ * @Author: your name
+ * @Date: 2021-07-30 09:25:33
+ * @LastEditTime: 2021-07-30 16:10:54
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \undefinede:\programs\php\wgj_replace\data\config\cache.php
+ */
 
 // +----------------------------------------------------------------------
 // | 缓存设置
@@ -6,7 +14,7 @@
 
 return [
     // 默认缓存驱动
-    'default' => env('cache.driver', 'file'),
+    'default' => env('cache.driver', 'redis'),
 
     // 缓存连接方式配置
     'stores'  => [
@@ -25,5 +33,13 @@ return [
             'serialize'  => [],
         ],
         // 更多的缓存连接
+        'redis' => [
+            // 驱动方式
+            'type'       => 'Redis',
+            // 序列化机制 例如 ['serialize', 'unserialize']
+            'port' => 7001,
+            'host' => '127.0.0.1',
+            'serialize'  => ['serialize', 'unserialize'],
+        ],
     ],
 ];

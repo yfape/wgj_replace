@@ -2,7 +2,7 @@
 /*
  * @Author: your name
  * @Date: 2021-07-30 09:25:33
- * @LastEditTime: 2021-07-30 10:10:58
+ * @LastEditTime: 2021-07-30 16:11:20
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \wgj_replace\data\app\middleware.php
@@ -16,5 +16,7 @@ return [
     // Session初始化
     // \think\middleware\SessionInit::class
     //全局跨域
-    think\middleware\AllowCrossDomain::class
+    think\middleware\AllowCrossDomain::class,
+    //全局缓存
+    think\middleware\CheckRequestCache::class
 ];
